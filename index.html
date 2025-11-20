@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業務PC向けブラウザ診断（15問高精度版）</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="title">15問でわかる：あなたに最適な業務PC向けブラウザ診断</h1>
+            <div class="subtitle">全15問からあなたの使い方を診断します。直感的にサクサク回答しましょう！</div>
+            <div class="progress-wrapper">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"></div>
+                </div>
+                <div class="progress-text" id="progressText">0 / 15（0%）</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="questionsContainer"></div>
+
+            <div class="results-container" id="resultsContainer">
+                <header class="results-header">
+                    <h2 class="results-title">診断結果</h2>
+                </header>
+                
+                <div class="recommendations" id="recommendationsContainer"></div>
+                
+                <section class="user-tags">
+                    <h3 class="section-title">あなたの回答から読み取れるキーワード</h3>
+                    <div class="tags-list" id="userTagsList"></div>
+                </section>
+                
+                <section class="ranking">
+                    <h3 class="section-title">総合スコア（順位）</h3>
+                    <div class="ranking-list" id="rankingList"></div>
+                </section>
+                
+                <div class="results-actions">
+                    <button class="action-button secondary" onclick="reviewAnswers()">回答を見直す</button>
+                    <button class="action-button secondary" onclick="resetDiagnosis()">リセット</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <!-- Alert Overlay -->
+        <div class="alert-overlay" id="alertOverlay">
+            <div class="alert-box">
+                <h3 class="alert-title">選択してください</h3>
+                <p class="alert-message">この質問に回答してから次に進んでください。</p>
+                <button class="alert-button" onclick="closeAlert()">わかりました</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                ※ 診断ロジックは簡易加点方式です。社内事情に合わせて各自の責任で判断をお願いします。
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
