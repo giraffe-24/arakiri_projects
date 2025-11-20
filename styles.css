@@ -9,8 +9,8 @@
     --selected-text: #FFF;
     --progress-bg: #E8E8E8;
     --progress-fill: #666;
-    --shadow: 0 2px 8px rgba(0,0,0,0.1);
-    --shadow-selected: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1);
+    --shadow-selected: 0 0.25rem 0.75rem rgba(0,0,0,0.2);
 }
 
 * {
@@ -22,19 +22,19 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     margin: 0;
-    padding: 1.25rem;
+    padding: clamp(10rem, 22vw, 13rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem);
     font-size: 1rem;
     line-height: 1.6;
 }
 
 .main-content {
-    margin-top: 12.5rem;
+    margin-top: 8vh;
 }
 
 .container {
     max-width: 67.5rem;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
 }
 
 .header {
@@ -45,25 +45,25 @@ body {
     right: 0;
     z-index: 100;
     width: 100%;
-    padding: 1.25rem 0;
+    padding: clamp(1rem, 3vw, 1.5rem) 0;
     box-shadow: 0 0.125rem 0.5rem rgba(43, 188, 197, 0.2);
 }
 
 .header-container {
     max-width: 67.5rem;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
     text-align: center;
 }
 
 .progress-wrapper {
-    max-width: 57.5rem;
+    max-width: clamp(30rem, 80vw, 57.5rem);
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 clamp(0.5rem, 2vw, 1.25rem);
 }
 
 .title {
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: clamp(1.4rem, 4vw, 2rem);
     font-weight: 600;
     margin: 0 0 0.5rem 0;
     color: var(--c-header-fg);
@@ -78,7 +78,7 @@ body {
 .progress-container {
     background-color: var(--c-progress-bg-header);
     border-radius: 0.25rem;
-    height: 0.5rem;
+    height: clamp(0.35rem, 1vw, 0.5rem);
     overflow: hidden;
     margin-bottom: 0.5rem;
     position: relative;
@@ -92,7 +92,7 @@ body {
 }
 
 .progress-text {
-    font-size: 0.8125rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     color: var(--c-header-fg);
     text-align: center;
     font-weight: 500;
@@ -100,17 +100,17 @@ body {
 
 @media (min-width: 48rem) {
     .header {
-        padding: 1.5rem 0;
+        padding: clamp(1.25rem, 3vw, 1.75rem) 0;
     }
 }
 
 .question-card {
     background-color: var(--card-bg);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    margin-bottom: 1.875rem;
+    border-radius: 0.6rem;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    margin-bottom: clamp(1.25rem, 4vw, 2rem);
     box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
+    border: 0.0625rem solid var(--border-color);
     display: none;
 }
 
@@ -119,46 +119,47 @@ body {
 }
 
 .question-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .question-number {
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
 .question-title {
-    font-size: clamp(1.125rem, 3vw, 1.25rem);
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
     font-weight: 600;
     color: var(--text-emphasis);
     margin: 0 0 0.5rem 0;
 }
 
 .question-help {
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
     color: var(--text-secondary);
     margin: 0;
 }
 
 .options-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .option-button {
     display: block;
     width: 100%;
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.75rem;
+    padding: clamp(0.9rem, 2.5vw, 1.2rem) clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: clamp(0.6rem, 2vw, 1rem);
     background-color: var(--card-bg);
-    border: 2px solid var(--border-color);
+    border: 0.15rem solid var(--border-color);
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: clamp(1rem, 3vw, 1.2rem);
     text-align: left;
     transition: all 0.2s ease;
     color: var(--text-primary);
     position: relative;
+    min-height: 2.8rem;
 }
 
 .option-button:hover {
@@ -166,8 +167,8 @@ body {
 }
 
 .option-button:focus {
-    outline: 2px solid var(--text-emphasis);
-    outline-offset: 2px;
+    outline: 0.15rem solid var(--text-emphasis);
+    outline-offset: 0.15rem;
 }
 
 .option-button.selected {
@@ -182,17 +183,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
 }
 
 .nav-button {
-    padding: 0.75rem 1.5rem;
+    padding: clamp(0.8rem, 2.5vw, 1.2rem) clamp(1.2rem, 3vw, 1.6rem);
     background-color: var(--card-bg);
-    border: 2px solid var(--border-color);
+    border: 0.15rem solid var(--border-color);
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     transition: all 0.2s ease;
     color: var(--text-primary);
+    min-height: 2.8rem;
 }
 
 .next-button {
@@ -206,8 +209,8 @@ body {
 }
 
 .nav-button:focus {
-    outline: 2px solid var(--text-emphasis);
-    outline-offset: 2px;
+    outline: 0.15rem solid var(--text-emphasis);
+    outline-offset: 0.15rem;
 }
 
 .nav-button:disabled {
@@ -218,10 +221,10 @@ body {
 .results-container {
     display: none;
     background-color: var(--card-bg);
-    border-radius: 0.75rem;
-    padding: 2rem;
+    border-radius: 0.6rem;
+    padding: clamp(1.25rem, 4vw, 2rem);
     box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
+    border: 0.0625rem solid var(--border-color);
 }
 
 .results-container.active {
@@ -230,11 +233,11 @@ body {
 
 .results-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .results-title {
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-size: clamp(1.4rem, 4vw, 1.75rem);
     font-weight: 600;
     color: var(--text-emphasis);
     margin: 0 0 1rem 0;
@@ -243,16 +246,16 @@ body {
 .recommendations {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .recommendation-card {
     background-color: var(--bg-color);
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
     text-align: center;
-    border: 2px solid var(--border-color);
+    border: 0.15rem solid var(--border-color);
 }
 
 .recommendation-card.primary {
@@ -260,13 +263,13 @@ body {
 }
 
 .recommendation-label {
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
 .recommendation-browser {
-    font-size: clamp(1.125rem, 3vw, 1.25rem);
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
     font-weight: 600;
     color: var(--text-emphasis);
     margin: 0 0 0.5rem 0;
@@ -277,21 +280,21 @@ body {
 }
 
 .browser-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: clamp(1.25rem, 4vw, 1.5rem);
+    height: clamp(1.25rem, 4vw, 1.5rem);
 }
 
 .recommendation-score {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     color: var(--text-secondary);
 }
 
 .user-tags {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .section-title {
-    font-size: clamp(1rem, 3vw, 1.125rem);
+    font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 600;
     color: var(--text-emphasis);
     margin: 0 0 0.75rem 0;
@@ -300,33 +303,33 @@ body {
 .tags-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: clamp(0.4rem, 1.5vw, 0.5rem);
 }
 
 .user-tag {
     background-color: var(--selected-bg);
     color: var(--selected-text);
-    padding: 0.375rem 0.75rem;
+    padding: clamp(0.3rem, 1vw, 0.4rem) clamp(0.6rem, 2vw, 0.75rem);
     border-radius: 1rem;
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
 }
 
 .ranking {
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .ranking-list {
     background-color: var(--bg-color);
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: clamp(0.8rem, 2.5vw, 1rem);
 }
 
 .ranking-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-color);
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) 0;
+    border-bottom: 0.0625rem solid var(--border-color);
 }
 
 .ranking-item:last-child {
@@ -336,7 +339,7 @@ body {
 .ranking-position {
     font-weight: 600;
     color: var(--text-emphasis);
-    margin-right: 0.75rem;
+    margin-right: clamp(0.5rem, 2vw, 0.75rem);
 }
 
 .ranking-browser {
@@ -344,12 +347,12 @@ body {
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: clamp(0.4rem, 1.5vw, 0.5rem);
 }
 
 .ranking-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: clamp(1rem, 3vw, 1.25rem);
+    height: clamp(1rem, 3vw, 1.25rem);
 }
 
 .alert-overlay {
@@ -368,34 +371,35 @@ body {
 .alert-box {
     background-color: var(--card-bg);
     border-radius: 0.75rem;
-    padding: 2rem;
-    max-width: 25rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
+    max-width: clamp(20rem, 80vw, 25rem);
     text-align: center;
     box-shadow: var(--shadow-selected);
-    border: 2px solid var(--selected-bg);
+    border: 0.15rem solid var(--selected-bg);
 }
 
 .alert-title {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 3vw, 1.125rem);
     font-weight: 600;
     color: var(--text-emphasis);
     margin: 0 0 0.75rem 0;
 }
 
 .alert-message {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     color: var(--text-secondary);
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 clamp(1rem, 3vw, 1.5rem) 0;
 }
 
 .alert-button {
-    padding: 0.75rem 1.5rem;
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.2rem, 3vw, 1.5rem);
     background-color: var(--selected-bg);
     color: var(--selected-text);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    min-height: 2.8rem;
 }
 
 .alert-button:hover {
@@ -405,24 +409,26 @@ body {
 .ranking-score {
     color: var(--text-secondary);
     font-weight: 500;
+    font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 .results-actions {
     display: flex;
-    gap: 0.75rem;
+    gap: clamp(0.6rem, 2vw, 0.8rem);
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .action-button {
-    padding: 0.75rem 1.25rem;
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.25rem);
     background-color: var(--selected-bg);
     color: var(--selected-text);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     transition: all 0.2s ease;
+    min-height: 2.8rem;
 }
 
 .action-button:hover {
@@ -430,14 +436,14 @@ body {
 }
 
 .action-button:focus {
-    outline: 2px solid var(--text-emphasis);
-    outline-offset: 2px;
+    outline: 0.15rem solid var(--text-emphasis);
+    outline-offset: 0.15rem;
 }
 
 .action-button.secondary {
     background-color: var(--card-bg);
     color: var(--text-primary);
-    border: 2px solid var(--border-color);
+    border: 0.15rem solid var(--border-color);
 }
 
 .action-button.secondary:hover {
@@ -446,12 +452,12 @@ body {
 }
 
 .footer {
-    margin-top: 2.5rem;
+    margin-top: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
     color: var(--c-header-fg);
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
     line-height: 1.5;
-    padding: 1.5rem 1.25rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
     background-color: var(--c-header-bg);
 }
 
@@ -461,23 +467,33 @@ body {
 }
 
 @media (max-width: 48rem) {
+    body {
+        padding: clamp(11rem, 28vw, 15rem) clamp(0.8rem, 2.5vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
+    }
+
     .container {
-        padding: 0 0.625rem;
+        padding: 0 clamp(0.625rem, 2vw, 1rem);
     }
-    
+
     .question-card {
-        padding: 1.5rem 1.25rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
     }
-    
+
     .recommendations {
         grid-template-columns: 1fr;
     }
-    
+
     .results-actions {
         flex-direction: column;
     }
-    
+
     .main-content {
-        margin-top: 10rem;
+        margin-top: 7.25vh;
+    }
+}
+
+@media (min-width: 48.0625rem) {
+    .results-actions {
+        flex-direction: row;
     }
 }
